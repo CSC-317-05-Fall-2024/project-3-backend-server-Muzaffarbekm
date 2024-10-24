@@ -1,5 +1,3 @@
-// public/scripts/restaurantCards.js
-
 // Function to fetch and render restaurants
 async function fetchAndRenderRestaurants() {
     try {
