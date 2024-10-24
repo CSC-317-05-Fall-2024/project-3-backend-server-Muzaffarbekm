@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guide</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="restaurants.css">
+    <script defer src="scripts/header.js"></script> <!-- Add header.js -->
+</head>
+<body>
+
+    <header></header> <!-- Dynamically populated by header.js -->
+
+    <div class="banner">
+        <img src="images/hawaii-1.jpg" alt="Banner Image of Location">
+        <h1>Restaurants in Kauai</h1>
+    </div>
+
+    <nav></nav> <!-- Dynamically populated by header.js -->
+
+    <main class="restaurants">
+        <% restaurants.forEach(restaurant => { %>
+            <div class="restaurant-card">
+                <img src="<%= restaurant.photo %>" alt="Restaurant Image">
+                <h3><%= restaurant.name %></h3>
+                <p><%= restaurant.address %></p>
+                <p><%= restaurant.phone %></p>
+                <button class="delete-btn" onclick="deleteRestaurantCard(this)">X</button>
+            </div>
+        <% }) %>
+    </main>
+    
+    <script src="/scripts/restaurantCards.js"></script>  <!-- Add the script -->
+    
+    
+
+    <footer></footer> <!-- Dynamically populated by header.js -->
+
+</body>
+</html>
