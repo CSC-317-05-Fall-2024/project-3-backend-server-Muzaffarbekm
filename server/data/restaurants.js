@@ -1,4 +1,4 @@
-// restaurants.js
+// data/restaurants.js
 
 const restaurantData = [
     {
@@ -45,7 +45,7 @@ const restaurantData = [
     }
 ];
 
-let lastId = restaurantData.length - 1;  // Adjusted to match the highest current ID
+let lastId = restaurantData.length - 1; // Adjusted to match the highest current ID
 
 const getNextId = () => {
     lastId += 1;
@@ -64,6 +64,7 @@ const getRestaurant = (id) => {
 
 // Create a new restaurant entry
 const createRestaurant = (newRestaurant) => {
+    console.log('New Restaurant:', newRestaurant);
     const id = getNextId();
     const restaurant = { id, ...newRestaurant };
     restaurantData.push(restaurant);
@@ -75,10 +76,9 @@ const deleteRestaurant = (id) => {
     const index = restaurantData.findIndex(restaurant => restaurant.id === parseInt(id));
     if (index !== -1) {
         restaurantData.splice(index, 1);
-        return true;  // Successfully deleted
+        return true; // Successfully deleted
     }
-    return false;  // Restaurant not found
+    return false; // Restaurant not found
 };
 
 export { getRestaurants, getRestaurant, createRestaurant, deleteRestaurant };
-export default { restaurantData };
