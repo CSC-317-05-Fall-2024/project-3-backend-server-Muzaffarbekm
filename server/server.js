@@ -34,12 +34,11 @@ app.get('/attractions', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'attractions.html'));
 });
 
-// Serve the restaurants page dynamically
+// Serve the restaurants page
 app.get('/restaurants', (req, res) => {
-    const restaurants = getRestaurants();
-    console.log('Restaurants Data:', restaurants);
-    res.render('restaurants', { restaurants });
+    res.render('restaurants'); // No need to pass any data
 });
+
 
 // Route for a specific restaurant by ID
 app.get('/restaurants/:id', (req, res) => {

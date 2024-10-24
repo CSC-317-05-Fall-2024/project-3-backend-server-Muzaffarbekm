@@ -3,7 +3,14 @@ import express from 'express';
 const router = express.Router();
 
 // Import necessary functions
-import { createRestaurant, deleteRestaurant } from '../data/restaurants.js';
+import { getRestaurants, createRestaurant, deleteRestaurant } from '../data/restaurants.js';
+
+
+// Get all restaurants
+router.get('/restaurants', (req, res) => {
+    const restaurants = getRestaurants();
+    res.json(restaurants);
+});
 
 // Create a new restaurant
 router.post('/restaurants', (req, res) => {
